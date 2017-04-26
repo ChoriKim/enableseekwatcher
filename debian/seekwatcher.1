@@ -1,0 +1,120 @@
+.\" This file was generated using help2man 1.40.10.
+.TH USAGE: "1" "December 2012" "Usage: seekwatcher [options]"
+.SH NAME
+seekwatcher - utility to visualize block I/O patterns
+.SH SYNOPSIS
+.B seekwatcher
+[\fIoptions\fR]
+.SH OPTIONS
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+show this help message and exit
+.TP
+\fB\-d\fR DEVICE, \fB\-\-device\fR=\fIDEVICE\fR
+Device for blktrace
+.TP
+\fB\-D\fR BLKTRACE_DESTINATION, \fB\-\-blktrace\-destination\fR=\fIBLKTRACE_DESTINATION\fR
+Destination for blktrace
+.TP
+\fB\-t\fR TRACE, \fB\-\-trace\fR=\fITRACE\fR
+blktrace file
+.TP
+\fB\-p\fR PROG, \fB\-\-prog\fR=\fIPROG\fR
+exec program
+.TP
+\fB\-\-full\-trace\fR
+Don't filter blktrace events
+.TP
+\fB\-a\fR ADJUST, \fB\-\-adjust\fR=\fIADJUST\fR
+Adjust plot placement:
+left=0.125,right=0.79,bottom=0.1,top=0.9,wspace=0.2,hspace=0.8
+.TP
+\fB\-c\fR COLORS, \fB\-\-colors\fR=\fICOLORS\fR
+List of colors to use in plot
+.TP
+\fB\-C\fR COLUMNS, \fB\-\-columns\fR=\fICOLUMNS\fR
+Number of columns for subplots
+.TP
+\fB\-z\fR ZOOM, \fB\-\-zoom\fR=\fIZOOM\fR
+Zoom range min:max (in MB)
+.TP
+\fB\-x\fR XZOOM, \fB\-\-xzoom\fR=\fIXZOOM\fR
+Time range min:max (seconds)
+.TP
+\fB\-o\fR OUTPUT, \fB\-\-output\fR=\fIOUTPUT\fR
+output file
+.TP
+\fB\-l\fR LABEL, \fB\-\-label\fR=\fILABEL\fR
+label
+.TP
+\fB\-\-dpi\fR=\fIDPI\fR
+dpi
+.TP
+\fB\-\-io\-graph\-dots\fR=\fIIO_GRAPH_DOTS\fR
+Disk IO dot style
+.TP
+\fB\-\-io\-graph\-marker\-size\fR=\fIIO_GRAPH_MARKER_SIZE\fR
+Disk IO dot size
+.TP
+\fB\-\-io\-graph\-cell\-multi\fR=\fIIO_GRAPH_CELL_MULTI\fR
+Multiplier for cells
+.TP
+\fB\-O\fR ONLY_GRAPH, \fB\-\-only\-graph\fR=\fIONLY_GRAPH\fR
+Add a single graph to the output (io, tput, seek, iops, stats)
+.TP
+\fB\-N\fR NO_GRAPH, \fB\-\-no\-graph\fR=\fINO_GRAPH\fR
+Remove a single graph (io, tput, seek, iops, stats)
+.TP
+\fB\-s\fR, \fB\-\-only\-io\-graph\-seeks\fR
+Only plot seeks on the IO graph
+.TP
+\fB\-r\fR ROLLING_AVG, \fB\-\-rolling\-avg\fR=\fIROLLING_AVG\fR
+Rolling average for seeks and throughput (in seconds)
+.TP
+\fB\-i\fR, \fB\-\-interactive\fR
+Use matplotlib interactive
+.TP
+\fB\-\-backend\fR=\fIBACKEND\fR
+matplotlib backend (Qt4Agg, TkAgg, GTKAgg) case sensitive
+.TP
+\fB\-T\fR TITLE, \fB\-\-title\fR=\fITITLE\fR
+Graph Title
+.TP
+\fB\-R\fR, \fB\-\-reads\-only\fR
+Graph only reads
+.TP
+\fB\-W\fR, \fB\-\-writes\-only\fR
+Graph only writes
+.TP
+\fB\-F\fR FIGURE_SIZE, \fB\-\-figure\-size\fR=\fIFIGURE_SIZE\fR
+Figure size (8x6)
+.TP
+\fB\-P\fR, \fB\-\-tag\-process\fR
+Tag IO graph by process
+.TP
+\fB\-M\fR MERGE, \fB\-\-merge\fR=\fIMERGE\fR
+Merge process pids for a process
+.TP
+\fB\-\-legend\fR=\fILEGEND\fR
+Legend position 1.01,0.5
+.TP
+\fB\-\-legend\-columns\fR=\fILEGEND_COLUMNS\fR
+Legend columns
+.TP
+\fB\-m\fR, \fB\-\-movie\fR
+Generate an IO movie
+.TP
+\fB\-\-movie\-frames\fR=\fIMOVIE_FRAMES\fR
+Number of frames per second
+.TP
+\fB\-\-movie\-length\fR=\fIMOVIE_LENGTH\fR
+Movie length in seconds
+.TP
+\fB\-\-movie\-cell\-size\fR=\fIMOVIE_CELL_SIZE\fR
+Size in pixels of the IO cells
+.TP
+\fB\-\-movie\-vbitrate\fR=\fIMOVIE_VBITRATE\fR
+Mencoder vbitrate option (default 16000)
+.SH "SEE ALSO"
+Examples of usage in
+.B /usr/share/doc/seekwatcher/README.html

@@ -1,0 +1,27 @@
+Source: seekwatcher
+Section: utils
+Priority: optional
+Maintainer: Dmitry Smirnov <onlyjob@debian.org>
+Build-Depends: debhelper (>= 9), python-all-dev
+              ,cython
+              ,mercurial
+              ,python-numpy
+X-Python-Version: >= 2.6
+Standards-Version: 3.9.5
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/seekwatcher.git
+Vcs-Git: git://anonscm.debian.org/collab-maint/seekwatcher.git
+Homepage: https://oss.oracle.com/~mason/seekwatcher/
+
+Package: seekwatcher
+Architecture: linux-any
+Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
+        ,blktrace
+        ,python-matplotlib
+        ,python-numpy
+Recommends: libtheora-bin
+           ,mencoder
+Description: utility to visualize block I/O patterns
+ Seekwatcher generates graphs from blktrace runs to help visualize IO
+ patterns and performance. It can plot multiple blktrace runs together,
+ making it easy to compare the differences between different benchmark
+ runs.

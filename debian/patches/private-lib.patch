@@ -1,0 +1,17 @@
+Last-Update: 2012-12-19
+Author: Dmitry Smirnov <onlyjob@member.fsf.org>
+Forwarded: not-needed
+Description: fix private module location
+
+--- a/cmd/seekwatcher
++++ b/cmd/seekwatcher
+@@ -53,8 +53,9 @@
+ # Boston, MA 021110-1307, USA.
+ #
+ import sys, os, signal, time, commands, tempfile, signal
+ from optparse import OptionParser
++sys.path.append("/usr/lib/seekwatcher")
+ from seekwatcher import rundata
+ 
+ blktrace_only = False
+ tags = { "": 0 }

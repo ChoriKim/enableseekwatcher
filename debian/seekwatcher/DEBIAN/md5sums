@@ -1,0 +1,9 @@
+3ab89975a3c226a86708e38eb63890e0  usr/bin/seekwatcher
+fa3ae9a668df37c96582f174c0707405  usr/lib/seekwatcher/seekwatcher-0.50.egg-info
+d41d8cd98f00b204e9800998ecf8427e  usr/lib/seekwatcher/seekwatcher/__init__.py
+9d162e61ca5816a9063dd9c0800ce1b8  usr/lib/seekwatcher/seekwatcher/blkparse.so
+7895571dc2673cfabc179a322f24b7a2  usr/lib/seekwatcher/seekwatcher/rundata.so
+98b557d1574c4fa13e77a6b492a7efb3  usr/share/doc/seekwatcher/README.html
+7d069c0616e89c66ef9982f8bd3bb549  usr/share/doc/seekwatcher/changelog.Debian.gz
+b9f23a980d82a164558725c79809b343  usr/share/doc/seekwatcher/copyright
+05065b20869b927acfafa4fe4e3039a6  usr/share/man/man1/seekwatcher.1.gz

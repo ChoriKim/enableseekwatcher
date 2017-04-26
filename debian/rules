@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+DPATH = $(abspath $(dir $(MAKEFILE_LIST)))
+PKG := $(word 2,$(shell dpkg-parsechangelog -l$(DPATH)/changelog | grep ^Source))
+
+%:
+	dh $@ --with python2
+
+override_dh_auto_install:
+	dh_auto_install -- \
+            --install-lib=/usr/lib/$(PKG) \
+            --install-scripts=/usr/bin
+
+override_dh_python2:
+	dh_python2
+	## post-install clean-up
+	$(RM) -rv $(CURDIR)/debian/$(PKG)/usr/share/python
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
+
+.PHONY: get-orig-source
+get-orig-source: $(PKG)_$(VER).orig.tar.xz
+	@
+
+VER ?= $(word 2,$(shell dpkg-parsechangelog -l$(DPATH)/changelog | grep ^Version | perl -pe 's/-[0-9.]+\Z//'))
+GDATE = $(shell echo $(VER) | perl -pe 's/[0-9.]+\+hg(\d{4})(\d{2})(\d{2})/$$1-$$2-$$3/')
+$(PKG)_$(VER).orig.tar.xz:
+	@echo "# Downloading..."
+	#uscan --noconf --verbose --rename --destdir=$(CURDIR) --check-dirname-level=0 --force-download --download-version $(VER) $(DPATH)
+	hg clone http://oss.oracle.com/mercurial/mason/seekwatcher $(PKG)-$(VER)
+	cd $(PKG)-$(VER) \
+	&& hg revert --date $(GDATE) --all \
+	&& [ -s ChangeLog ] || ( echo "# Generating ChangeLog..." \
+	&& hg log --style=changelog > ChangeLog ) \
+	&& $(RM) -rv .hg .hg* && cd .. && echo "# Packing..." \
+	&& tar -caf $(PKG)_$(VER).orig.tar.xz $(PKG)-$(VER) --mtime=$(GDATE)
+	$(RM) -r $(PKG)-$(VER)

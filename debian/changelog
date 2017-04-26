@@ -1,0 +1,21 @@
+seekwatcher (0.12+hg20091016-3) unstable; urgency=medium
+
+  * Re-build to fix run-time error ("ValueError: numpy.dtype
+    does not appear to be the correct type object") with updated
+    python-numpy (Closes: #734405).
+  * Bump Standards to 3.9.5.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Thu, 09 Jan 2014 08:42:35 +1100
+
+seekwatcher (0.12+hg20091016-2) unstable; urgency=low
+
+  * Restrict architecture to "linux-any" due to dependency on "blktrace"
+    that is available on linux only (Closes: #708687).
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sat, 18 May 2013 11:11:11 +1000
+
+seekwatcher (0.12+hg20091016-1) unstable; urgency=low
+
+  * Initial release (Closes: #696623).
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sat, 23 Mar 2013 07:33:39 +1100
